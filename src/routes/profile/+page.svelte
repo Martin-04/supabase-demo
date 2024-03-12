@@ -70,7 +70,7 @@
 </script>
 
 {#if $session}
-<Avatar size={150} bind:url={avatarUrl}/>
+	<Avatar size={150} bind:url={avatarUrl} />
 	<form on:submit|preventDefault={updateProfile} class="form-widget">
 		<div>Email: {$session.user.email}</div>
 		<div>
