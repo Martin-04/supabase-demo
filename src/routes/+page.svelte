@@ -48,7 +48,7 @@
 		{/each}
 	</ul>
 {/await}
-<span class="loading loading-bars loading-lg text-primary" />
+
 
 <!-- {#await promise}
 	<div><span class="loading loading-dots loading-lg" /></div>
