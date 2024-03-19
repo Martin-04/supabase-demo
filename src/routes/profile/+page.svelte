@@ -17,7 +17,7 @@
 	async function getProfile() {
 		try {
 			loading = true;
-			const { user } = $session; // Add null check here
+			const { user } = $session || {}; // Add null check here
 
 			const { data, error, status } = await supabase
 				.from('profiles')
