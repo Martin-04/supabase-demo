@@ -1,6 +1,6 @@
 import { supabase } from '$lib/supabase';
 
-export async function POST({request}) {
+export async function POST({ request }) {
 	const rabbit = await request.json();
 	console.log(rabbit);
 	if (rabbit.name[0] !== 'J' || rabbit.name[0] !== 'j') {
