@@ -29,25 +29,25 @@
 		</li>
 		<li><a href="/api/hello/Martin">Link zur API mit Route-Paramter</a></li>
 	</ul>
+
+	<form>
+		<h2>All my Rabbits</h2>
+		<input type="text" bind:value={name} /><br /><button class="btn" on:click={sendName}
+			>Add Rabbit!</button
+		>
+	</form>
+
+	<h2>Rabbit Name</h2>
+	{#await names}
+		<span class="loading loading-bars loading-lg text-primary" />
+	{:then result}
+		<ul>
+			{#each result.data as rabbit (rabbit.id)}
+				<li>{rabbit.name}</li>
+			{/each}
+		</ul>
+	{/await}
 </div>
-
-<form>
-	<h2>All my Rabbits</h2>
-	<input type="text" bind:value={name} /><br /><button class="btn" on:click={sendName}
-		>Add Rabbit!</button
-	>
-</form>
-
-<h2>Rabbit Name</h2>
-{#await names}
-	<span class="loading loading-bars loading-lg text-primary" />
-{:then result}
-	<ul>
-		{#each result.data as rabbit (rabbit.id)}
-			<li>{rabbit.name}</li>
-		{/each}
-	</ul>
-{/await}
 
 <!-- {#await promise}
 	<div><span class="loading loading-dots loading-lg" /></div>
